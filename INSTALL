@@ -29,10 +29,12 @@ function init_linux_font()
 
 if [ "${OS_TYPE}" = "Darwin" ]; then
     init_vim_file;
+elif [ "${OS_TYPE}" = "CYGWIN_NT-6.1" ]; then
+    init_vim_file;
 elif [ "${OS_TYPE}" = "Linux" ]; then
     init_vim_file;
     init_linux_font;
 else
-    echo "Unsupported OS type"
+    echo "Unsupported OS type " ${OS_TYPE}
     exit 1
 fi
