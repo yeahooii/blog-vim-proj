@@ -13,3 +13,7 @@ set cursorline
 set cursorcolumn
 " 设置 gvim 显示字体
 set guifont=YaHei\ Consolas\ Hybrid\ 11.5
+
+" 解决菜单栏乱码问题
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
