@@ -29,8 +29,13 @@ filetype    indent on               " 允许特定的文件类型载入缩进文
 if version >= 603
     set helplang=cn
 endif
-set fileencodings=ucs-bom,utf-8,shift-jis,gb18030,gbk,gb2312,cp936 " 文件编码自动识别顺序
-"set fileencodings=utf-8             " 文件编码，强制UTF-8
+set fileencodings=ucs-bom,utf-8,shift-jis,gb18030,gbk,gb2312,cp936,chinese " 文件编码自动识别顺序
+"新建文件优先选用编码
+if has("windows")
+	set fileencoding=chinese
+else
+	set fileencoding=utf-8
+endif
 set encoding=utf-8                  " vim内部编码
 set nobomb                          " 不使用bom编码
 set nobackup                        " 不使用备份文件
